@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+
+	<package name="default" namespace="/" extends="json-default">
+		<default-action-ref name="login" />
+		<action name="driverInfo" class="com.truck.web.GetDriverInfosAction">
+			<result type="json">
+			</result>
+		</action>
+		<action name="driverInfoByDistance" class="com.truck.web.getDriverInfoByDistance">
+			<result type="json">
+			</result>
+		</action>
+		<action name="login" class="com.truck.web.loginAction">
+			<result type="json">
+				<param name="root">jsonLogin</param>
+			</result>
+		</action>
+		<action name="driverInfoByPhone" class="com.truck.web.getDriverInfosByPhoneAction">
+			<result type="json">
+			</result>
+		</action>
+		<action name="goodsOrder" class="com.truck.web.getGoodsOrderAction">
+			<result type="json">
+			</result>
+		</action>
+		<action name="goodsOrderByPhone" class="com.truck.web.getGoodsOrderByPhoneAction">
+			<result type="json">
+			</result>
+		</action>
+	</package>
+
+
+</struts>
